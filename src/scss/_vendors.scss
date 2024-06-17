@@ -1,0 +1,69 @@
+// Vendors
+
+
+.swiper {
+  width: 100%;
+}
+
+// .swiper-wrapper {
+//   width: calc(100% + 10rem);
+// }
+
+.swiper-active {
+  color: #ffa500;
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+.swiper-product .swiper-slide {
+  display: none;
+}
+
+.swiper-product .swiper-slide.block {
+  display: block;
+}
+
+.swiper-filter .swiper-btn.swiper-btn-active .bg-category {
+  background-image: theme('backgroundImage.category-active') !important;
+  color: theme('colors.white') !important;
+}
+
+.swiper-filter {
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+}
+
+
+
+
+
+
+.swiper-pagination-bullet-active {
+  background-color: theme('colors.orange.600');
+}
+
+
+.swiper-partners {
+  @media (max-width: 1024px) {
+    .swiper-slide {
+      width: theme('width.53') !important;
+    }
+  }
+}
+
+
+
+.gs_reveal {
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+
+  @media (max-width: 992px) {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+}
+

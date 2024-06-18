@@ -1,0 +1,237 @@
+#intro {
+  &__logo {
+    @apply flex justify-center items-center bg-white;
+
+    > img {
+      @apply w-[60%] md:w-auto h-auto;
+    }
+  }
+
+  &__title {
+    @apply block px-6 py-8 border border-solid border-white w-[332px] xl:w-[400px] sm:h-[75vh];
+  }
+}
+
+#agenda {
+  @apply pb-20 xl:pb-0 xl:min-h-[1400px];
+
+  &__slider {
+    @apply w-[70svw] sm:w-[330px] xl:w-[400px];
+
+    .aspect-square-custom,
+    .aspect-square-custom > img {
+      @media (max-width: theme("screens.sm")) {
+        width: 100%;
+      }
+    }
+
+    .js-slider {
+      @apply bg-white;
+    }
+
+    .tns-nav {
+      @apply absolute;
+      bottom: 42px;
+      left: 34px;
+
+      > button {
+        @apply inline-flex bg-white border mr-2 border-solid border-black w-[8px] h-[8px] rounded-full;
+
+        &.tns-nav-active {
+          @apply bg-black;
+        }
+      }
+    }
+  }
+}
+
+#map-wrapper {
+  @media (min-width: theme("screens.lg")) {
+    width: calc(100% - 98px);
+  }
+
+  @media (min-width: theme("screens.xl")) {
+    width: calc(100% - 200px);
+  }
+
+  .map {
+    &__image {
+      width: calc(100% - 400px);
+      height: 330px;
+      @media (min-width: theme("screens.xl")) {
+        height: 400px;
+      }
+    }
+  }
+}
+
+#visite {
+  @apply md:pb-80 xl:pb-0 xl:min-h-[1300px];
+
+  &__button {
+    @apply flex justify-center items-center px-6 py-8 border border-solid border-white aspect-square-custom duration-200 transition-all hover:bg-tertiary hover:border-tertiary;
+  }
+}
+
+.mediatheque__item {
+  @apply transition-all duration-200;
+
+  @media (max-width: theme("screens.xl")) {
+    @apply w-1/2 h-auto;
+  }
+
+  @media (max-width: theme("screens.sm")) {
+    @apply w-full;
+  }
+
+  &-source {
+    &-doc {
+      @apply hover:bg-tertiary;
+
+      &:hover {
+        .metas .icon svg path,
+        .link .icon svg path {
+          @apply fill-white;
+        }
+
+        .text {
+          @apply text-white;
+        }
+      }
+    }
+
+    &-audio {
+      @apply hover:bg-secondary;
+
+      .link .icon svg path {
+        @apply fill-none;
+      }
+
+      &:hover {
+        .metas .icon svg path,
+        .link .icon svg path {
+          @apply stroke-white;
+        }
+
+        .text {
+          @apply text-white;
+        }
+      }
+    }
+  }
+
+  .metas .icon svg path,
+  .link .icon svg path,
+  .text {
+    @apply transition-all duration-200;
+  }
+}
+
+#map {
+  @apply pb-10 xl:pb-0 xl:min-h-[1070px];
+
+  #hours-plans {
+    @media (min-width: theme("screens.sm")) {
+      width: calc(100% - 400px);
+      min-height: 400px;
+    }
+
+    ul.nav-tabs {
+      @apply border-b border-solid border-medium flex mb-16;
+
+      > li {
+        @apply w-1/2;
+
+        &.active {
+          @apply border-b-4 border-solid border-tertiary;
+        }
+
+        > a {
+          @apply block py-5 uppercase font-semibold text-tertiary;
+        }
+      }
+    }
+
+    .tab-content {
+      @apply w-full float-left;
+
+      > .tab-pane {
+        @apply hidden;
+
+        &.active {
+          @apply flex flex-col items-start;
+        }
+      }
+
+      > .active {
+        @apply flex flex-col items-start;
+      }
+    }
+  }
+}
+
+footer {
+  > .container {
+    .row {
+      &:first-child {
+        > .col {
+          &:last-child {
+            @media (min-width: theme("screens.sm")) {
+              width: calc(100% - 332px);
+            }
+
+            @media (min-width: theme("screens.lg")) {
+              width: calc(100% - 402px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav-footer {
+    ul {
+      > li {
+        @apply mx-4 transition-all duration-200 hover:underline hover:text-secondary;
+      }
+    }
+  }
+
+  .footer-social {
+    > li {
+      @apply mx-1 lg:mx-3;
+
+      > a {
+        &:hover {
+          svg path {
+            @apply fill-black;
+          }
+        }
+        svg path {
+          @apply duration-200 transition-all;
+        }
+      }
+    }
+  }
+
+  .input-wrapper {
+    @apply relative border-b border-solid border-black pb-4;
+
+    input {
+      @apply bg-transparent w-[200px] lg:w-[300px] xl:w-[455px];
+
+      &::placeholder {
+        @apply uppercase text-gray tracking-widest;
+      }
+    }
+
+    button {
+      @apply -mt-1;
+      .icon {
+        svg path {
+          @apply stroke-gray;
+        }
+      }
+    }
+  }
+}

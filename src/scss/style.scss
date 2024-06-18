@@ -3,7 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'fonts';
-@import 'base';
-//@import 'components';
-//@import 'animations';
+@import "fonts";
+@import "animations";
+@import "base";
+@import "buttons";
+@import "navigations";
+@import "homepage";

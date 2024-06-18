@@ -1,0 +1,137 @@
+.link {
+  @apply transition duration-500;
+
+  &__arrow {
+    svg path {
+      @apply transition duration-200;
+    }
+    &:hover {
+      @apply translate-x-2;
+
+      svg path {
+        @apply stroke-black;
+      }
+    }
+  }
+
+  &__full {
+    @apply inline-flex items-center bg-tertiary py-5 px-7 rounded-full hover:bg-black;
+
+    .text {
+      @apply text-white uppercase text-sm font-semibold;
+    }
+
+    .icon {
+      @apply ms-3;
+    }
+  }
+
+  &__arrow-simple {
+    @apply flex items-center transition duration-500 opacity-70 hover:opacity-100;
+
+    .text {
+      @apply text-white font-semibold text-xl sm:text-[40px];
+    }
+
+    .icon {
+      @apply ms-14;
+
+      svg path {
+        @apply transition duration-200;
+      }
+    }
+    &:hover {
+      @apply translate-x-2;
+
+      .icon svg path {
+        @apply stroke-black;
+      }
+    }
+  }
+
+  &__arrow-text {
+    @apply flex items-center;
+
+    &:hover {
+      @apply translate-x-2;
+
+      .text {
+        @apply text-black;
+      }
+
+      .icon svg path {
+        @apply stroke-black;
+      }
+    }
+
+    &-bis {
+      @apply flex items-center;
+
+      .text {
+        @apply transition duration-200 text-sm tracking-widest uppercase text-gray mr-3;
+      }
+
+      .icon svg path {
+        @apply transition duration-200 fill-black;
+      }
+    }
+
+    &-tertiary {
+      @apply flex items-center px-12 py-8;
+      .text {
+        @apply text-tertiary font-semibold;
+      }
+
+      .icon {
+        @apply ms-3;
+
+        svg path {
+          @apply fill-tertiary;
+        }
+      }
+
+      &:hover {
+        .text {
+          @apply text-black;
+        }
+
+        .icon svg path {
+          @apply fill-black;
+        }
+      }
+    }
+
+    &-secondary {
+      @apply flex items-center px-12 py-8;
+      .text {
+        @apply text-secondary font-semibold;
+      }
+
+      .icon {
+        @apply ms-3;
+
+        svg path {
+          @apply fill-secondary;
+        }
+      }
+
+      &:hover {
+        .text {
+          @apply text-black;
+        }
+
+        .icon svg path {
+          @apply fill-black;
+        }
+      }
+    }
+
+    .text {
+      @apply transition duration-200 text-sm tracking-widest font-semibold uppercase text-secondary mr-3;
+    }
+
+    .icon svg path {
+      @apply transition duration-200 stroke-secondary;
+    }
+  }
+}

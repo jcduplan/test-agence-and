@@ -1,0 +1,163 @@
+// Language
+.language-switcher-wrapper > li {
+  &:first-child {
+    @apply relative flex items-center pr-3;
+    &:after {
+      content: "";
+      @apply relative block bg-white w-[1px] h-[17px] ml-3;
+
+      footer & {
+        @apply bg-gray;
+      }
+    }
+  }
+}
+
+// Header right
+#header-right {
+  &.open-menu {
+    #panel-menu {
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%, 100% 100%, 100% 0%);
+    }
+  }
+
+  #menu-wrapper {
+    @apply relative z-10 w-[40px] sm:w-[80px] h-[40px] sm:h-[80px] border-2 border-white border-solid flex items-center justify-center pointer-events-auto cursor-pointer hover:bg-tertiary hover:border-tertiary duration-200;
+
+    @media (min-width: theme("screens.xxl")) {
+      @apply left-[80px];
+    }
+
+    &.contrasted {
+      @apply bg-white;
+
+      #menu-button span {
+        @apply bg-tertiary;
+      }
+    }
+
+    &.open {
+      @apply bg-white;
+
+      #menu-button span {
+        @apply bg-tertiary;
+
+        &:nth-child(1),
+        &:nth-child(4) {
+          @apply top-[8px] w-0 start-1/2;
+        }
+
+        &:nth-child(2) {
+          @apply rotate-45;
+        }
+
+        &:nth-child(3) {
+          @apply -rotate-45;
+        }
+      }
+    }
+
+    #menu-button {
+      @apply w-[20px] h-[17px] rotate-0;
+
+      span {
+        @apply block absolute bg-white opacity-100 start-0 w-full h-[2px] rounded-full rotate-0 transition-all duration-200 ease-in-out;
+
+        &:nth-child(1) {
+          @apply top-0;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          @apply top-[8px];
+        }
+
+        &:nth-child(4) {
+          @apply top-[16px];
+        }
+      }
+    }
+  }
+
+  #panel-menu {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: calc(90svw - 2px);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 100% 100%, 100% 0%);
+    transition: clip-path 500ms cubic-bezier(0.87, 0, 0.13, 1);
+    @apply absolute sm:flex flex-wrap sm:items-end top-0 xxl:right-[-80px] h-[80vh] sm:h-[70vh] z-0 pointer-events-auto;
+
+    @media (min-width: theme("screens.sm")) {
+      width: calc(100% - 130px);
+    }
+
+    > .menu-left {
+      @apply sm:py-24 sm:px-12 p-4;
+
+      @media (min-width: theme("screens.sm")) {
+        height: calc(100% - 70px);
+      }
+
+      ul > li {
+        &:not(:last-child) {
+          @apply pb-2 sm:pb-8;
+        }
+
+        > a {
+          @apply text-white sm:text-xl font-bold hover:text-black duration-200;
+        }
+      }
+    }
+
+    > .menu-right {
+      @apply sm:py-40 sm:px-20 p-4;
+
+      ul > li {
+        &:not(:last-child) {
+          @apply pb-2 sm:pb-8;
+        }
+
+        > a {
+          @apply text-black sm:text-3xl font-bold hover:text-tertiary duration-200;
+        }
+      }
+
+      > .menu-bottom {
+        @apply mt-4 sm:mt-20;
+
+        ul > li {
+          &:not(:last-child) {
+            @apply sm:pr-7 pb-0;
+          }
+
+          > a {
+            @apply text-gray text-base font-normal uppercase hover:text-tertiary duration-200;
+          }
+        }
+      }
+    }
+  }
+
+  #ticket-wrapper {
+    @apply relative z-10 w-[40px] sm:w-[80px] h-[40px] sm:h-[80px] xxl:left-[80px] bg-tertiary border-2 border-tertiary border-solid flex items-center justify-center pointer-events-auto cursor-pointer hover:bg-white hover:border-white;
+
+    &:hover svg path {
+      fill: theme("colors.tertiary");
+    }
+  }
+
+  #avatar-wrapper {
+    @apply relative z-10 w-[40px] sm:w-[80px] h-[40px] sm:h-[80px] xxl:left-[80px] bg-white border-2 border-white border-solid flex items-center justify-center pointer-events-auto cursor-pointer hover:bg-tertiary hover:border-tertiary duration-200;
+
+    &:hover svg path {
+      fill: white;
+    }
+  }
+
+  #ticket-wrapper,
+  #avatar-wrapper {
+    svg path {
+      @apply duration-200;
+    }
+  }
+}
